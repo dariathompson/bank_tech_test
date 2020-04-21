@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'account'
 describe Account do
   it 'initializes new account with balance 0' do
