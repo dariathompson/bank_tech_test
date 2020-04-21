@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'transaction'
 describe Transaction do
   let(:date) { Time.now.strftime('%d/%m/%Y') }
