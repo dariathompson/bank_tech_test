@@ -35,5 +35,11 @@ describe Account do
       expect(subject.transactions[0].type).to eq 'deposit'
       expect(subject.transactions[0].amount).to eq 300
     end
+    it 'stores transaction withdraw into transaction history' do
+      subject.deposit(300)
+      subject.withdraw(100)
+      expect(subject.transactions[1].type).to eq 'withdraw'
+      expect(subject.transactions[1].amount).to eq 100
+    end
   end
 end
