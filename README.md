@@ -66,3 +66,8 @@ I want to print statement
 | Attributes | balance, transactions | type, amount, date | account, current_balance |
 | Methods | deposit, withdraw, print_statement | | show |
 
+* I planned classes based on nouns in my user stories. They are: account, deposit, withdrawal, statement. I decided to summarise deposit and withdrawal into Transaction class
+* Account class creates new instances of Transaction when user makes deposit or withdrawal and stores balance and history of transactions
+* Transaction class stores information about type of transaction, amount and when the transaction was made
+* Statement is initialised in Account class when user prints statement
+* I used TDD through whole process
