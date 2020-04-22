@@ -3,6 +3,7 @@
 require 'account'
 describe Account do
   let(:subject) { Account.new }
+  let(:date) { Time.now.strftime('%d/%m/%Y') }
   describe '#initialize' do
     it 'initializes new account with balance 0' do
       expect(subject.balance).to eq 0
@@ -42,6 +43,15 @@ describe Account do
       subject.withdraw(100)
       expect(subject.transactions[1].type).to eq 'withdraw'
       expect(subject.transactions[1].amount).to eq 100
+    end
+  end
+
+  describe '#print_statement' do
+    it 'prints statement with details of transactions that been made' do
+      subject.deposit(400)
+      subject.withdraw(150)
+      statement_text = "date || credit || debit || balance\n#{date} || || 150.00 || 250.00\n#{date} || 400.00 || || 400.00\n"
+      expect { subject.print_statement }.to output(statement_text).to_stdout
     end
   end
 end

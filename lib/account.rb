@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'transaction'
+require_relative 'statement'
 class Account
   attr_reader :balance, :transactions
   def initialize
@@ -16,6 +17,11 @@ class Account
   def withdraw(amount)
     store_transaction('withdraw', amount)
     @balance -= amount
+  end
+
+  def print_statement
+    statement = Statement.new(self)
+    statement.show
   end
 
   private

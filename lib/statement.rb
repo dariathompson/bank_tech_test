@@ -26,6 +26,6 @@ class Statement
   end
 
   def count_balance(transaction)
-    '%.2f' % @balance += (transaction.type == 'deposit' ? transaction.amount : - transaction.amount)
+    format('%.2f', @balance += (transaction.type == 'deposit' ? transaction.amount : - transaction.amount))
   end
 end
