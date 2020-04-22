@@ -2,6 +2,7 @@
 
 require 'account'
 describe Account do
+  let(:subject) { Account.new }
   describe '#initialize' do
     it 'initializes new account with balance 0' do
       expect(subject.balance).to eq 0
@@ -30,13 +31,14 @@ describe Account do
   end
 
   describe '.transactions' do
-    it 'stores transaction deposit into transaction history' do
+    before(:each) do
       subject.deposit(300)
+    end
+    it 'stores transaction deposit into transaction history' do
       expect(subject.transactions[0].type).to eq 'deposit'
       expect(subject.transactions[0].amount).to eq 300
     end
     it 'stores transaction withdraw into transaction history' do
-      subject.deposit(300)
       subject.withdraw(100)
       expect(subject.transactions[1].type).to eq 'withdraw'
       expect(subject.transactions[1].amount).to eq 100

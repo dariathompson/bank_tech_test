@@ -19,6 +19,7 @@ class Account
   end
 
   private
+
   def store_transaction(type, amount)
     @transactions << Transaction.new(type: type, amount: amount)
   end
