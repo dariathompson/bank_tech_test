@@ -13,14 +13,19 @@ class Statement
     puts STATEMENT_HEADER + format_transaction
   end
 
+  private
+
   def format_transaction
     @account.transactions.map do |transaction|
-      transaction.type == 'deposit' ? transaction_type = "#{'%.2f' % transaction.amount} ||" : transaction_type = "|| #{'%.2f' % transaction.amount}"
-      "#{transaction.date} || #{transaction_type} || #{'%.2f' % count_balance(transaction)}\n"
-    end.reverse.join('')
+      "#{transaction.date} || #{format_type(transaction)} || #{count_balance(transaction)}"
+    end.reverse.join("\n")
+  end
+
+  def format_type(transaction)
+    transaction.type == 'deposit' ? "#{'%.2f' % transaction.amount} ||" : "|| #{'%.2f' % transaction.amount}"
   end
 
   def count_balance(transaction)
-    transaction.type == 'deposit' ? @balance += transaction.amount : @balance -= transaction.amount
+    '%.2f' % @balance += (transaction.type == 'deposit' ? transaction.amount : - transaction.amount)
   end
 end
