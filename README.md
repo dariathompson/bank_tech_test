@@ -1,4 +1,21 @@
 # Bank Tech Test
+## Running the program
+### Setup
+From command line run
+```
+git clone https://github.com/dariathompson/bank_tech_test.git
+cd bank_tech_test
+```
+#### Install dependencies
+```
+bundle
+```
+### Run tests
+```
+rspec
+```
+### Using in IRB
+![Example using in IRB](./assets/example.png)
 ## Specification
 ### Requirements
 * You should be able to interact with your code via a REPL like IRB or the JavaScript console. (You don't need to implement a command line interface that takes input from STDIN.)
@@ -18,6 +35,7 @@ date || credit || debit || balance
 13/01/2012 || 2000.00 || || 3000.00
 10/01/2012 || 1000.00 || || 1000.00
 ```
+
 ## User Stories
 ```
 As a customer,
@@ -39,3 +57,4 @@ As a customer,
 So I can check my balance and transactions I've made,
 I want to print statement
 ```
+## Approach
