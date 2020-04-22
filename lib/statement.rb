@@ -22,13 +22,13 @@ class Statement
   end
 
   def format_type(transaction)
-    amount = format('%.2f', transaction.amount)
+    amount = '%.2f' % transaction.amount
     deposit?(transaction) ? "#{amount} ||" : "|| #{amount}"
   end
 
   def count_balance(transaction)
     amount = transaction.amount
-    format('%.2f', @current_balance += (deposit?(transaction) ? amount : - amount))
+    '%.2f' % @current_balance += (deposit?(transaction) ? amount : - amount)
   end
 
   def deposit?(transaction)

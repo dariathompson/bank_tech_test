@@ -67,7 +67,8 @@ I want to print statement
 | Methods | deposit, withdraw, print_statement | | show |
 
 * I planned classes based on nouns in my user stories. They are: account, deposit, withdrawal, statement. I decided to summarise deposit and withdrawal into Transaction class
-* Account class creates new instances of Transaction when user makes deposit or withdrawal and stores balance and history of transactions
+* Account class creates new instances of Transaction when user makes deposit or withdrawal. Account stores balance and history of transactions
 * Transaction class stores information about type of transaction, amount and when the transaction was made
 * Statement is initialised in Account class when user prints statement
+* Made an assumption that customer cannot withdraw money unless there is enough money in their account and added this edge case in my project
 * I used TDD through whole process

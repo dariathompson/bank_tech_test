@@ -15,6 +15,7 @@ class Account
   end
 
   def withdraw(amount)
+    fail "Your account has insufficient funds." if amount > @balance
     store_transaction('withdraw', amount)
     @balance -= amount
   end
