@@ -58,9 +58,11 @@ So I can check my balance and transactions I've made,
 I want to print statement
 ```
 ## Approach
-* First I created user stories based on requirements and acceptance criteria\
-* Based on user stories I made my planning and structured my code\
-Class | Account | Transaction | Statement
--- | ------------ | ------------- | -------------
-Attributes | balance, transactions | type, amount, date | account, current_balance
-Methods | deposit, withdraw, print_statement |  | show
+* First I created user stories based on requirements and acceptance criteria
+* Based on user stories I made my planning and structured my code
+
+| Class          | Account      | Transaction  | Statement    |
+| :------------- | :----------- | :----------- | :----------- |
+| Attributes | balance, transactions | type, amount, date | account, current_balance |
+| Methods | deposit, withdraw, print_statement | | show |
+
