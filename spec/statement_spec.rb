@@ -26,6 +26,13 @@ describe Statement do
         expect { statement.show }.to output(statement_text).to_stdout
       end
     end
-
+    context 'deposit and withdrawal were made' do
+      it 'prints statement with details of transactions in reversed order' do
+        account.deposit(1000)
+        account.withdraw(300)
+        statement_text = "date || credit || debit || balance\n#{date} || || 300.00 || 700.00\n#{date} || 1000.00 || || 1000.00\n"
+        expect { statement.show }.to output(statement_text).to_stdout
+      end
+    end
   end
 end
