@@ -9,4 +9,10 @@ describe Statement do
       expect(statement.account).to eq account
     end
   end
+
+  describe '#show' do
+    it 'prints empty statement if no transactions have been made' do
+      expect { statement.show }.to output("date || credit || debit || balance\n").to_stdout
+    end
+  end
 end

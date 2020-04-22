@@ -5,4 +5,8 @@ class Statement
   def initialize(account)
     @account = account
   end
+
+  def show
+    puts 'date || credit || debit || balance'
+  end
 end
