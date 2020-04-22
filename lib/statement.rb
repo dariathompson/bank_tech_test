@@ -6,7 +6,7 @@ class Statement
   STATEMENT_HEADER = "date || credit || debit || balance\n"
   def initialize(account)
     @account = account
-    @balance = 0
+    @current_balance = 0
   end
 
   def show
@@ -26,6 +26,6 @@ class Statement
   end
 
   def count_balance(transaction)
-    format('%.2f', @balance += (transaction.type == 'deposit' ? transaction.amount : - transaction.amount))
+    format('%.2f', @current_balance += (transaction.type == 'deposit' ? transaction.amount : - transaction.amount))
   end
 end
