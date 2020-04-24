@@ -2,7 +2,7 @@
 
 require 'account'
 describe Account do
-  let(:subject) { Account.new }
+  let(:subject) { described_class.new }
   let(:date) { Time.now.strftime('%d/%m/%Y') }
   describe '#initialize' do
     it 'initializes new account with balance 0' do

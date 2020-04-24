@@ -3,7 +3,7 @@
 require 'transaction'
 describe Transaction do
   let(:date) { Time.now.strftime('%d/%m/%Y') }
-  let(:transaction) { Transaction.new(type: 'deposit', amount: 1000) }
+  let(:transaction) { described_class.new(type: 'deposit', amount: 1000) }
   describe '#initialize' do
     it 'stores type of transaction' do
       expect(transaction.type).to eq 'deposit'
