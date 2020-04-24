@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require_relative 'account'
 class Statement
   attr_reader :account
   STATEMENT_HEADER = "date || credit || debit || balance\n"
